@@ -47,14 +47,35 @@ export default class App extends Component {
         todos: [...this.state.todos, newTodo]
       });
     }
+    return (this.state.task = '');
   };
+
+  handleCompletedTodo = () => {
+    const doneTodo = document.querySelectorAll('.todo p');
+    console.log(doneTodo);
+    doneTodo.forEach(todo => todo.classList.toggle('done'));
+
+    doneTodo.completed = true;
+  };
+
+  // handeClearTodo = e => {
+  //   e.preventDefault();
+
+  // };
 
   render() {
     return (
       <div className="app">
         <h2>TODOS</h2>
         {this.state.todos.map(({task, id, completed}) => {
-          return <TodoList key={id} task={task} completed={completed} />;
+          return (
+            <TodoList
+              key={id}
+              task={task}
+              completed={completed}
+              onClick={this.handleCompletedTodo}
+            />
+          );
         })}
         <TodoForm onChange={this.handleChanges} addTodo={this.handleAddTodo} />
       </div>

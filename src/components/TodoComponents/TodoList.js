@@ -6,10 +6,10 @@ import Todo from './Todo';
 
 import './Todo.css';
 
-const TodoList = ({task}) => {
+const TodoList = ({task, onClick}) => {
   return (
     <div className="todo-list">
-      <Todo task={task} />
+      <Todo task={task} onClick={onClick} />
     </div>
   );
 };

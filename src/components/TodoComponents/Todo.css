@@ -3,6 +3,14 @@
   font-weight: 300;
 }
 
+.todo p {
+  cursor: pointer;
+}
+
+.todo .done {
+  text-decoration: line-through;
+}
+
 .todo-form {
   display: flex;
   flex-wrap: wrap;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Todo = ({task}) => {
+const Todo = ({task, onClick}) => {
   return (
     <div className="todo">
-      <p>{task}</p>
+      <p onClick={onClick}>{task}</p>
     </div>
   );
 };

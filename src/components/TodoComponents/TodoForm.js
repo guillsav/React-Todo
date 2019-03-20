@@ -9,7 +9,7 @@ const TodoForm = ({onChange, addTodo}) => {
         className="task"
         onChange={onChange}
         name="task"
-        placeholder="ADD NEW TODO"
+        placeholder="...TODO"
       />
       <button className="add-todo" onClick={addTodo}>
         Add Todo
