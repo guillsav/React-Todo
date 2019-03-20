@@ -47,15 +47,10 @@ export default class App extends Component {
         todos: [...this.state.todos, newTodo]
       });
     }
-    return (this.state.task = '');
   };
 
   handleCompletedTodo = () => {
-    const doneTodo = document.querySelectorAll('.todo p');
-    console.log(doneTodo);
-    doneTodo.forEach(todo => todo.classList.toggle('done'));
-
-    doneTodo.completed = true;
+    const todos = this.state.todos;
   };
 
   // handeClearTodo = e => {
