@@ -4,8 +4,14 @@ import React from 'react';
 
 import Todo from './Todo';
 
+import './Todo.css';
+
 const TodoList = ({task}) => {
-  return <Todo task={task} />;
+  return (
+    <div className="todo-list">
+      <Todo task={task} />
+    </div>
+  );
 };
 
 export default TodoList;

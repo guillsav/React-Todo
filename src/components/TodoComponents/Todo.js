@@ -2,7 +2,7 @@ import React from 'react';
 
 const Todo = ({task}) => {
   return (
-    <div>
+    <div className="todo">
       <p>{task}</p>
     </div>
   );

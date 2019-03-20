@@ -1,0 +1,16 @@
+.app {
+  font-size: 1.6rem;
+  margin: 0px auto;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.app h2 {
+  font-size: 6.8rem;
+  font-weight: 500;
+  margin: 40px auto;
+  color: rgb(84, 126, 255);
+}
