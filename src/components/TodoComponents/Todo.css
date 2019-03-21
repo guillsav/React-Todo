@@ -1,0 +1,83 @@
+.todo-list {
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+
+.todo p {
+  cursor: pointer;
+}
+
+.todo .done {
+  text-decoration: line-through;
+}
+
+.todo-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.todo-form .task {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(160, 160, 160);
+  outline: none;
+  height: 48px;
+  padding-bottom: 10px;
+  font-size: 3.4rem;
+  width: 1000px;
+  margin: 30px 0;
+  transition: all 0.2s;
+  font-family: Bariol;
+  color: rgb(84, 126, 255);
+}
+
+.todo-form .task::placeholder {
+  opacity: 0.5;
+  font-family: Bariol;
+  font-size: 3.4rem;
+}
+
+.todo-form .task:focus {
+  border-bottom: 2px solid rgb(84, 126, 255);
+}
+
+.todo-form .add-todo {
+  width: 200px;
+  height: 52px;
+  background: rgb(84, 126, 255);
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 1.8rem;
+  font-family: Bariol;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 2px 10px 20px rgb(0, 0, 0, 0.2);
+}
+
+.todo-form .add-todo:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 2px 10px rgb(0, 0, 0, 0.2);
+}
+
+.todo-form .clear-todo {
+  width: 200px;
+  height: 52px;
+  background: rgb(84, 126, 255);
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 1.8rem;
+  font-family: Bariol;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 2px 10px 20px rgb(0, 0, 0, 0.2);
+}
+
+.todo-form .clear-todo:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 2px 10px rgb(0, 0, 0, 0.2);
+}
