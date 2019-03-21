@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Todo.css';
 
-const TodoForm = ({onChange, addTodo, task, clearTodo}) => {
+const TodoForm = ({onChange, addTodo, task, clearTodo, todos}) => {
   return (
     <form className="todo-form">
       <input
@@ -10,13 +10,16 @@ const TodoForm = ({onChange, addTodo, task, clearTodo}) => {
         onChange={onChange}
         name="task"
         value={task}
-        placeholder="Add task..."
+        placeholder="Add topic..."
       />
       <button className="add-todo" onClick={addTodo}>
-        Add Task
+        Add Topic
       </button>
-      <button className="clear-todo" onClick={clearTodo}>
-        Remove Done
+      <button
+        className={`${todos.length > 0 ? 'clear-todo' : 'disabled'}`}
+        onClick={clearTodo}
+      >
+        Remove Completed topics
       </button>
     </form>
   );

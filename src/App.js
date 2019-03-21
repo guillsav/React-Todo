@@ -72,7 +72,7 @@ export default class App extends Component {
     e.preventDefault();
 
     this.setState({
-      todos: this.state.todos.filter(todo => todo.completed === false)
+      todos: this.state.todos.filter(todo => !todo.completed)
     });
   };
 
@@ -85,11 +85,12 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-        <h2>Task List</h2>
+        <h2>Syllabus</h2>
 
         <TodoForm
           onChange={this.handleChanges}
           addTodo={this.handleAddTodo}
+          todos={this.state.todos}
           task={this.state.task}
           clearTodo={this.handeClearTodo}
         />

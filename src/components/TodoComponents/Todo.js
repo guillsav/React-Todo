@@ -13,7 +13,7 @@ const Todo = ({task, targetTodo, id, completed, removeTodo}) => {
       <button
         className={`${completed ? 'check' : null}`}
         onClick={() => removeTodo(id)}
-      >{`${completed ? 'Check' : 'Remove'}`}</button>
+      >{`${completed ? 'Remove' : 'Remove'}`}</button>
     </div>
   );
 };
