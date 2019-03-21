@@ -2,19 +2,22 @@ import React from 'react';
 
 import './Todo.css';
 
-const TodoForm = ({onChange, addTodo}) => {
+const TodoForm = ({onChange, addTodo, task, clearTodo}) => {
   return (
     <form className="todo-form">
       <input
         className="task"
         onChange={onChange}
         name="task"
-        placeholder="...TODO"
+        value={task}
+        placeholder="Add task..."
       />
       <button className="add-todo" onClick={addTodo}>
-        Add Todo
+        Add Task
       </button>
-      <button className="clear-todo">Clear Completed</button>
+      <button className="clear-todo" onClick={clearTodo}>
+        Remove Done
+      </button>
     </form>
   );
 };
