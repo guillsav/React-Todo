@@ -76,10 +76,10 @@ export default class App extends Component {
     });
   };
 
-  handleRemoveTodo = todoToRemove => {
-    this.setState(prevState => ({
-      todos: prevState.todos.filter(todo => todoToRemove !== todo)
-    }));
+  handleRemoveTodo = id => {
+    this.setState({
+      todos: this.state.todos.filter(todo => id !== todo.id)
+    });
   };
 
   render() {
