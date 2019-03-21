@@ -77,8 +77,8 @@ export default class App extends Component {
   };
 
   handleRemoveTodo = todoToRemove => {
-    this.setState(oldState => ({
-      todos: oldState.todos.filter(todo => todoToRemove !== todo)
+    this.setState(prevState => ({
+      todos: prevState.todos.filter(todo => todoToRemove !== todo)
     }));
   };
 
