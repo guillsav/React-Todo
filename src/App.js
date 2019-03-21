@@ -36,18 +36,16 @@ export default class App extends Component {
 
     const {task} = this.state;
 
-    if (task) {
-      const newTodo = {
-        task,
-        id: Date.now(),
-        completed: false
-      };
+    const newTodo = {
+      task,
+      id: Date.now(),
+      completed: false
+    };
 
-      this.setState({
-        todos: [...this.state.todos, newTodo],
-        task: ''
-      });
-    }
+    this.setState({
+      todos: [...this.state.todos, newTodo],
+      task: ''
+    });
   };
 
   // handleCompletedTodo = () => {
@@ -85,7 +83,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-        <h2>Syllabus</h2>
+        <h2>Topics</h2>
 
         <TodoForm
           onChange={this.handleChanges}

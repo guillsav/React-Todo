@@ -4,15 +4,16 @@ import './Todo.css';
 
 const TodoForm = ({onChange, addTodo, task, clearTodo, todos}) => {
   return (
-    <form className="todo-form">
+    <form onSubmit={addTodo} className="todo-form">
       <input
+        required
         className="task"
         onChange={onChange}
         name="task"
         value={task}
         placeholder="Add topic..."
       />
-      <button className="add-todo" onClick={addTodo}>
+      <button className="add-todo" type="submit">
         Add Topic
       </button>
       <button
