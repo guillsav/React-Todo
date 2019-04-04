@@ -1,9 +1,19 @@
 import React from 'react';
 
-const Todo = ({task, onClick}) => {
+const Todo = ({task, targetTodo, id, completed, removeTodo}) => {
   return (
     <div className="todo">
-      <p onClick={onClick}>{task}</p>
+      <p
+        className={`${completed ? 'done' : null}`}
+        id={id}
+        onClick={() => targetTodo(id)}
+      >
+        {task}
+      </p>
+      <button
+        className={`${completed ? 'check' : null}`}
+        onClick={() => removeTodo(id)}
+      >{`${completed ? 'Remove' : 'Remove'}`}</button>
     </div>
   );
 };

@@ -8,12 +8,12 @@ import './App.css';
 const todos = [
   {
     task: 'Organize Garage',
-    id: 1528817077286,
+    id: Date.now(),
     completed: false
   },
   {
     task: 'Bake Cookies',
-    id: 1528817084358,
+    id: Date.now() + 1,
     completed: false
   }
 ];
@@ -22,7 +22,7 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      todos,
+      todos: [],
       task: ''
     };
   }
@@ -36,43 +36,67 @@ export default class App extends Component {
 
     const {task} = this.state;
 
-    if (task) {
-      const newTodo = {
-        task,
-        id: Date.now(),
-        completed: false
-      };
+    const newTodo = {
+      task,
+      id: Date.now(),
+      completed: false
+    };
 
-      this.setState({
-        todos: [...this.state.todos, newTodo]
-      });
-    }
+    this.setState({
+      todos: [...this.state.todos, newTodo],
+      task: ''
+    });
   };
 
-  handleCompletedTodo = () => {
-    const todos = this.state.todos;
-  };
+  // handleCompletedTodo = () => {
+  //   const {todos} = this.state;
+  //   const newTasks = todos.filter(({completed}) => completed === false);
 
-  // handeClearTodo = e => {
-  //   e.preventDefault();
-
+  //   console.log(newTasks);
   // };
+
+  targetTodo = todoId => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todoId === todo.id) {
+          return {...todo, completed: !todo.completed};
+        }
+        return todo;
+      })
+    });
+  };
+
+  handeClearTodo = e => {
+    e.preventDefault();
+
+    this.setState({
+      todos: this.state.todos.filter(todo => !todo.completed)
+    });
+  };
+
+  handleRemoveTodo = id => {
+    this.setState({
+      todos: this.state.todos.filter(todo => id !== todo.id)
+    });
+  };
 
   render() {
     return (
       <div className="app">
-        <h2>TODOS</h2>
-        {this.state.todos.map(({task, id, completed}) => {
-          return (
-            <TodoList
-              key={id}
-              task={task}
-              completed={completed}
-              onClick={this.handleCompletedTodo}
-            />
-          );
-        })}
-        <TodoForm onChange={this.handleChanges} addTodo={this.handleAddTodo} />
+        <h2>Topics</h2>
+
+        <TodoForm
+          onChange={this.handleChanges}
+          addTodo={this.handleAddTodo}
+          todos={this.state.todos}
+          task={this.state.task}
+          clearTodo={this.handeClearTodo}
+        />
+        <TodoList
+          todos={this.state.todos}
+          targetTodo={this.targetTodo}
+          removeTodo={this.handleRemoveTodo}
+        />
       </div>
     );
   }

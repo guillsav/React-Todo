@@ -2,19 +2,26 @@ import React from 'react';
 
 import './Todo.css';
 
-const TodoForm = ({onChange, addTodo}) => {
+const TodoForm = ({onChange, addTodo, task, clearTodo, todos}) => {
   return (
-    <form className="todo-form">
+    <form onSubmit={addTodo} className="todo-form">
       <input
+        required
         className="task"
         onChange={onChange}
         name="task"
-        placeholder="...TODO"
+        value={task}
+        placeholder="Add topic..."
       />
-      <button className="add-todo" onClick={addTodo}>
-        Add Todo
+      <button className="add-todo" type="submit">
+        Add Topic
       </button>
-      <button className="clear-todo">Clear Completed</button>
+      <button
+        className={`${todos.length > 0 ? 'clear-todo' : 'disabled'}`}
+        onClick={clearTodo}
+      >
+        Remove Completed topics
+      </button>
     </form>
   );
 };
